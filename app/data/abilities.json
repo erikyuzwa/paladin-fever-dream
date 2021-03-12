@@ -1,0 +1,125 @@
+{
+	"abilities": {
+		"judgement": {
+			"name": "Judgement",
+			"description": "",
+			"readyCost": { "ap": 1 },
+			"activateOn": "damage",
+			"effects": [
+				"damage"
+			]
+		},
+		"reckoning": {
+			"name": "Reckoning",
+			"description": "",
+			"readyCost": { "mp": 1 },
+			"activateOn": "attacked",
+			"effects": [
+        "damage"
+			]
+		},
+		"holyshield": {
+			"name": "Holy Shield",
+			"description": "",
+			"readyCost": { "ap": 1 },
+			"activateOn": "attacked",
+			"effects": [
+				"ap",
+				"apDamage",
+				"cancelDamage"
+			]
+		},
+		"push": {
+			"name": "Push",
+			"description": "",
+			"readyCost": { "ep": 1 },
+			"activateOn": "attack",
+			"effects": [
+				"push"
+			]
+		},
+		"sweep": {
+			"name": "Sweep",
+			"description": "",
+			"readyCost": { "ep": 1 },
+			"activateOn": "attack",
+			"effects": [
+				"pushAoe",
+				"cancelDamage"
+			]
+		},
+		"berserk": {
+			"name": "Berserk",
+			"description": "A lust for blood heals you",
+			"readyCost": { "ap": 1 },
+			"activateOn": "attack",
+			"effects": [
+				"hp"
+			]
+		},
+		"parry": {
+			"name": "Parry",
+			"description": "",
+			"readyCost": { "ap": 1 },
+			"activateOn": "attacked",
+			"effects": [
+				"cancelAttack"
+			]
+		},
+		"dodge": {
+			"name": "Dodge",
+			"description": "",
+			"readyCost": { "bp": 1 },
+			"activateOn": "attacked",
+			"effects": [
+				"cancelAttack"
+			]
+		},
+		"redoubt": {
+			"name": "Redoubt",
+			"description": "",
+			"readyCost": { "ep": 1 },
+			"activateOn": "damaged",
+			"effects": [
+				"cancelDamage"
+			]
+		},
+		"retreat": {
+			"name": "Retreat",
+			"description": "",
+			"readyCost": { "bp": 1 },
+			"activateOn": "attacked",
+			"effects": [
+				"cancelDamage",
+				"moveBack"
+			]
+		},
+		"shove": {
+			"name": "CounterShove",
+			"description": "",
+			"readyCost": { "ep": 1 },
+			"activateOn": "attacked",
+			"effects": [
+				"push"
+			]
+		},
+		"consecration": {
+			"name": "Consecration",
+			"description": "",
+			"readyCost": { "ep": 1 },
+			"activateOn": "pushed",
+			"effects": [
+				"cancelPush"
+			]
+		},
+		"swift": {
+			"name": "Swift",
+			"description": "",
+			"readyCost": { "bp": 1 },
+			"activateOn": "round",
+			"effects": [
+				"initiative"
+			]
+		}
+	}
+}

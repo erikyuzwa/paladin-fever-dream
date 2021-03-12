@@ -1,0 +1,33 @@
+{
+  "name": "paladinfeverdream",
+  "version": "0.6.0",
+  "description": "a roguelike built for 7DRL-2021",
+  "main": "app/main.js",
+  "scripts": {
+    "build": "grunt",
+    "start": "grunt serve"
+  },
+  "authors": [
+    "erik <erikyuzwa@gmail.com>"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "asar": "^3.0.3",
+    "electron": "^12.0.0",
+    "electron-packager": "^15.2.0",
+    "grunt": "^1.0.1",
+    "grunt-autoprefixer": "^3.0.4",
+    "grunt-concurrent": "^3.0.0",
+    "grunt-contrib-clean": "^2.0.0",
+    "grunt-contrib-connect": "^3.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-jshint": "^3.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-electron": "^12.0.0",
+    "jshint-stylish": "^2.2.1",
+    "load-grunt-config": "^3.0.1",
+    "npm-run-all": "^4.1.5",
+    "serve-static": "^1.11.1",
+    "time-grunt": "^2.0.0"
+  }
+}

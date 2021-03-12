@@ -1,0 +1,15 @@
+node_modules/
+app/node_modules/
+.tmp/
+dist/
+build/
+.sass-cache/
+app/bower_components/
+atlassian-ide-plugin.xml
+.idea/
+.DS_Store
+.metadata/
+RemoteSystemsTempFiles/
+npm-debug.log
+package-lock.json
+yarn.lock

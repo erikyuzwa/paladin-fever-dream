@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <meta name="description" content="Paladin Fever Dream">
+  <meta name="author" content="@eyuzwa">
+  <link rel="stylesheet" href="styles/main.css"/>
+  <!--
+ <meta http-equiv="Content-Security-Policy" content="default-src *; script-src * 'unsafe-inline' 'unsafe-eval'; connect-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; media-src *">
+  -->
+</head>
+<body class="rote-state">
+<article class="splash">
+	<pre title="Paladin Fever Dream">
+     _____                    _               __    ___                    _     _       _____
+|_   _|                  | |             / _|  / _ \                  (_)   | |     / __  \ _
+  | | ___ _ __ ___  _ __ | | ___    ___ | |_  / /_\ \_ __   __ _ _   _ _ ___| |__   `' / /'(_)
+  | |/ _ \ '_ ` _ \| '_ \| |/ _ \  / _ \|  _| |  _  | '_ \ / _` | | | | / __| '_ \    / /
+  | |  __/ | | | | | |_) | |  __/ | (_) | |   | | | | | | | (_| | |_| | \__ \ | | | ./ /___ _
+  \_/\___|_| |_| |_| .__/|_|\___|  \___/|_|   \_| |_/_| |_|\__, |\__,_|_|___/_| |_| \_____/(_)
+                   | |                                      __/ |
+                   |_|                                     |___/
+______     _                      _          _   _            _____                  _
+| ___ \   | |                    | |        | | | |          /  ___|                | |
+| |_/ /___| |_ _   _ _ __ _ __   | |_ ___   | |_| |__   ___  \ `--.  __ _ _ __   ___| |_ _   _ _ __ ___
+|    // _ \ __| | | | '__| '_ \  | __/ _ \  | __| '_ \ / _ \  `--. \/ _` | '_ \ / __| __| | | | '_ ` _ \
+| |\ \  __/ |_| |_| | |  | | | | | || (_) | | |_| | | |  __/ /\__/ / (_| | | | | (__| |_| |_| | | | | | |
+\_| \_\___|\__|\__,_|_|  |_| |_|  \__\___/   \__|_| |_|\___| \____/ \__,_|_| |_|\___|\__|\__,_|_| |_| |_|
+	</pre>
+  <div>A Roguelike Retro Game Made for the 7DRL Challenge 2021</div>
+  <div class="tip">
+    <div>A keyboard is required to play.</div>
+    Press Enter to begin.
+  </div>
+  <div class="credits">
+    Coding by Wazoo
+    <br/>Uses the open source libraries: rote js and rot js
+    <br/>Fonts: "Fix15Mono-Bold" by LambdaHack and "AppleII"
+    <br/>Thanks to <a href="http://www.roguelikeradio.com/" target="_blank">Roguelike Radio</a> and the
+    <a href="https://www.reddit.com/r/roguelikedev/" target="_blank">/r/roguelikedev subreddit</a>
+    for inspiration.
+  </div>
+  <div class="links">
+    <a href="https://itch.io/jam/7drl-challenge-2021" target="_blank">7DRL Challenge 2021</a>
+    <a href="https://erikyuzwa.com/" target="_blank">erikyuzwa.com</a>
+    <a href="https://twitter.com/eyuzwa" target="_blank">Follow me on Twitter</a>
+  </div>
+</article>
+<article class="rote">
+  <header>
+    <!-- <button>&#9776;</button> -->
+    <h1>Paladin Fever Dream</h1>
+    <span class="subtitle">v0.6.0 for 7DRL 2021</span>
+  </header>
+  <section id="display"></section>
+  <section id="console"></section>
+  <section id="interface"></section>
+  <section id="controls">
+    <ul>
+      <li>Move: WASD, HJKL, Numpad, Arrows</li>
+      <li>Attack by "bump" movement</li>
+      <li>Ready an ability: 1-9</li>
+      <li>Inventory: I</li>
+      <li>Toss/Drop: T</li>
+      <li>Use/Pickup: Enter</li>
+      <li>Wait: Space</li>
+    </ul>
+  </section>
+</article>
+
+
+<script src="lib/jquery/jquery-3.6.0.min.js"></script>
+<script src="lib/rote-0.5.0.js"></script>
+
+<script src="scripts/temple2.js"></script>
+
+
+</body>
+</html>
