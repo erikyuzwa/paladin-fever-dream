@@ -142,8 +142,8 @@ function runGame () {
   g.createLevels([
     'town',
     { levelTypeKey: 'dungeon', repeat: 2 },
-    'docks',
-    'gizmo',
+    'torture',
+    'temple',
   ], seed);
   const bottomLevel = g.levels[g.levels.length - 1];
   setupMachinery(bottomLevel);

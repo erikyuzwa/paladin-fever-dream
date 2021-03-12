@@ -3,7 +3,7 @@
 		"judgement": {
 			"name": "Judgement",
 			"description": "",
-			"readyCost": { "mp": 2 },
+			"readyCost": { "ap": 1 },
 			"activateOn": "damage",
 			"effects": [
 				"damage"
@@ -29,18 +29,27 @@
 				"cancelDamage"
 			]
 		},
-		"inflictwounds": {
-			"name": "Inflict Wounds",
+		"push": {
+			"name": "Push",
 			"description": "",
-			"readyCost": { "mp": 2 },
+			"readyCost": { "ep": 1 },
+			"activateOn": "attack",
+			"effects": [
+				"push"
+			]
+		},
+		"sweep": {
+			"name": "Sweep",
+			"description": "",
+			"readyCost": { "ep": 1 },
 			"activateOn": "attack",
 			"effects": [
 				"pushAoe",
 				"cancelDamage"
 			]
 		},
-		"holystrike": {
-			"name": "Holy Strike",
+		"berserk": {
+			"name": "Berserk",
 			"description": "A lust for blood heals you",
 			"readyCost": { "ap": 1 },
 			"activateOn": "attack",
@@ -85,6 +94,15 @@
 				"moveBack"
 			]
 		},
+		"shove": {
+			"name": "CounterShove",
+			"description": "",
+			"readyCost": { "ep": 1 },
+			"activateOn": "attacked",
+			"effects": [
+				"push"
+			]
+		},
 		"consecration": {
 			"name": "Consecration",
 			"description": "",
@@ -92,6 +110,15 @@
 			"activateOn": "pushed",
 			"effects": [
 				"cancelPush"
+			]
+		},
+		"swift": {
+			"name": "Swift",
+			"description": "",
+			"readyCost": { "bp": 1 },
+			"activateOn": "round",
+			"effects": [
+				"initiative"
 			]
 		}
 	}
