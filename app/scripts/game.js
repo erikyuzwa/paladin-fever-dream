@@ -3,7 +3,7 @@
 var g = new rote.Game({
   id: 'display',
   keyboard: 'multi-move',
-  // haveSplash: true,
+  haveSplash: true,
   data: {
     monsters: 'data/monsters.json',
     items: 'data/items.json',
@@ -36,7 +36,7 @@ g.addHook('afterTeleportLevel', (data, game) => {
     game.hero.score += (10 * data.levelIndex);
     // game.hero.gainRandomAbility(g.data.abilities);
     game.hero.gainRandomPoolMax();
-    game.print('Ding! You gain experience.', 'tip')
+    game.print('Ding! You gain a level of experience.', 'tip')
   }
 });
 
