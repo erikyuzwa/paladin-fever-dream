@@ -3,7 +3,7 @@
 var g = new rote.Game({
   id: 'display',
   keyboard: 'multi-move',
-  haveSplash: true,
+  // haveSplash: true,
   data: {
     monsters: 'data/monsters.json',
     items: 'data/items.json',
@@ -35,9 +35,14 @@ g.addHook('afterTeleportLevel', (data, game) => {
     game.hero.xp += 1;
     game.hero.score += (10 * data.levelIndex);
     // game.hero.gainRandomAbility(g.data.abilities);
+    game.hero.currency += 400; // boost of silver
     game.hero.gainRandomPoolMax();
     game.print('Ding! You gain a level of experience.', 'tip')
   }
+});
+
+g.addHook('afterHeroDeath', (data, game) => {
+  game.print('R.I.P Paladin - The Town mourns your loss.');
 });
 
 function createPlayerCharacter(level) {
@@ -45,12 +50,9 @@ function createPlayerCharacter(level) {
   g.createHero({
     x, y, name: 'Paladin', sightRange: 8,
     color: '#df2',
-    hp: 12, mp: 10, ap: 2, bp: 2, ep: 2,
+    hp: 12, mp: 10, ap: 2, bp: 2, ep: 2, currency: 200,
     faction: 'human'
   });
-
-  //TODO submit patch to rote-js for armor / defense
-  //g.hero.def = 0;
 
   g.hero.inventory.add( new rote.Item({ name: 'Spell Book', character: "⌓" }) );
   g.hero.gainRandomAbility(g.data.abilities);
@@ -90,6 +92,21 @@ function getPoolHtml(key, a, b, c) {
   return `<span class="pool ${key}-pool">${rote.Display.getPoolSquares(a, b, c)}</span>`
 }
 
+function getCurrency(hero) {
+  let money = '';
+  if (!hero.currency || hero.currency < 0) {
+    money = '0 c';
+  } else {
+    if (hero.currency <= 100) {
+      money = hero.currency + ' c';
+    } else if (hero.currency <= 1000) {
+      money = Math.floor(hero.currency / 100) + 's ' + Math.floor(hero.currency % 100) + ' c';
+    }
+  }
+
+  return money;
+}
+
 function runGame () {
   const seed = rote.random.makeSeed();
   // Connect to browser DOM for display
@@ -111,8 +128,9 @@ function runGame () {
 			<li><span title="${level.description}">Floor: ${game.activeLevelIndex + 1} / ${game.levels.length}</span>
 				<!-- <span class="score">Score: ${hero.score}</span> -->
 			</li>
+			<li><span>Currency: ${getCurrency(hero)}</span></li>
 			<li>Weapon Damage: ${hero.getWeaponDamage()}</li>
-			<!-- TODO submit to rote-js <li>Defense Rating: </li> -->
+			<li>Defense Rating: ${hero.getArmorDefense()}</li>
 			<li class="hp"><span title="hit points">HP:</span> ${getPoolHtml('hp', hero.hp, hero.hpMax, used.hp)}</li>
 			<li class="mp"><span title="mana points">MP:</span> ${getPoolHtml('mp', hero.mp, hero.mpMax, used.mp)}</li>
 			<!-- <li class="ap"><span title="attack points">AP:</span> ${getPoolHtml('ap', hero.ap, hero.apMax, used.ap)}</li> -->
@@ -153,8 +171,8 @@ function runGame () {
   createPlayerCharacter(topLevel);
 
   // "highlight" some parts of the town
-  const sunstone = topLevel.items.find((item) => { return item.type === 'sunstone'; });
-  topLevel.discoverCircle(sunstone.x, sunstone.y, 5);
+  const moonstone = topLevel.items.find((item) => { return item.type === 'moonstone'; });
+  topLevel.discoverCircle(moonstone.x, moonstone.y, 5);
   const stairs = topLevel.props.find((prop) => { return prop.type === 'stairsDown'; });
   topLevel.discoverCircle(stairs.x, stairs.y, 3);
   // Start the game
@@ -165,10 +183,11 @@ function runGame () {
     //g.print('A mysterious, pale dwarf tells you there is a powerful sunstone on this floor that is damaged and needs to be taken to the bottom floor for safety.', 'plot');
     g.print('Thank heavens ye have arrived!', 'plot');
   }, 3000);
-  //setTimeout(() => {
+  setTimeout(() => {
+    g.print("Find the Moonstone somewhere in our village and bring it down to the Temple or we'll all be cursed!!!", 'plot', 100);
     //g.print('He offers to pay you a large sum of gold when your quest is complete. ...If you survive.', 'plot', 100);
     //g.print('A mysterious Elf tells you there is a corrupted, but powerful Amethyst on this floor that needs to be taken to the Temple for cleansing.', 'plot', 100);
- // }, 5000);
+  }, 5000);
   // g.print('> Move with your favorite movement keys, and use things with Enter. <', 'tip', 200);
   g.start();
 }

@@ -12,11 +12,11 @@
       "color": "#677",
       "defense": 1
     },
-		"sunstone": {
-			"name": "Sunstone",
+		"moonstone": {
+			"name": "Moonstone",
 			"character": "✷", "_c": "⛭✸✷",
 			"color": "#fc0",
-			"illumination": 3
+			"illumination": 2
 		},
 		"ring": {
 			"name": "Ring of Chaos",

@@ -11,10 +11,8 @@
 				{ "type": "pedestal", "quantity": 1	},
 				{ "type": "shelves", "quantity": 2 },
 				{ "type": "chest", "quantity": 2 },
-				{ "type": "chair", "quantity": 3 },
-				{ "type": "table", "quantity": 4 },
-				{ "type": "lamp", "quantity": 3 },
-				{ "type": "extractor", "quantity": 0 }
+				{ "type": "chair", "quantity": 2 },
+				{ "type": "table", "quantity": 1 }
 			],
 			"monsterSpawn": 8,
 			"monsters": [
@@ -23,13 +21,14 @@
 				{ "type": "r", "quantity": 3 }
 			],
 			"items": [
-				{ "type": "sunstone", "quantity": 1, "clearing": 2 },
-				{ "type": "mace", "quantity": 1 }
+				{ "type": "moonstone", "quantity": 1, "clearing": 2 },
+				{ "type": "mace", "quantity": 1 },
+        { "type": "shield", "quantity": 1 }
 			]
 		},
 		"dungeon": {
-			"name": "Temple Grounds",
-			"description": "Abandoned grounds of the Temple",
+			"name": "Forgotten Temple Grounds",
+			"description": "These Temple Grounds have been defiled and cursed",
 			"color": "#616666",
 			"background": "#262222",
 			"map": { "type": "digger", "walls": true },
@@ -89,7 +88,7 @@
 			]
 		},
 		"temple": {
-			"name": "Temple Room (Final Level)",
+			"name": "Temple Room",
 			"color": "#747",
 			"background": "#202",
 			"description": "This floor ",
