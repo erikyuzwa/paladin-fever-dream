@@ -22,7 +22,8 @@
     "$": false,
     "angular": false,
     "module": false,
-    "ROT": false
+    "ROT": false,
+    "rote": false
   },
   "white": true
 }

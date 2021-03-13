@@ -1,9 +1,18 @@
-// "Temple of Anguish 2: Return to the Sanctum" for 7DRL 2021
+/**
+ * ______     _           _ _        ______                   ______
+ | ___ \   | |         | (_)       |  ___|                  |  _  \
+ | |_/ /_ _| | __ _  __| |_ _ __   | |_ _____   _____ _ __  | | | |_ __ ___  __ _ _ __ ___
+ |  __/ _` | |/ _` |/ _` | | '_ \  |  _/ _ \ \ / / _ \ '__| | | | | '__/ _ \/ _` | '_ ` _ \
+ | | | (_| | | (_| | (_| | | | | | | ||  __/\ V /  __/ |    | |/ /| | |  __/ (_| | | | | | |
+ \_|  \__,_|_|\__,_|\__,_|_|_| |_| \_| \___| \_/ \___|_|    |___/ |_|  \___|\__,_|_| |_| |_|
+
+ * initially for 7DRL 2021
+ */
 
 var g = new rote.Game({
   id: 'display',
   keyboard: 'multi-move',
-  // haveSplash: true,
+  haveSplash: true,
   data: {
     monsters: 'data/monsters.json',
     items: 'data/items.json',
@@ -37,7 +46,7 @@ g.addHook('afterTeleportLevel', (data, game) => {
     // game.hero.gainRandomAbility(g.data.abilities);
     game.hero.currency += 400; // boost of silver
     game.hero.gainRandomPoolMax();
-    game.print('Ding! You gain a level of experience.', 'tip')
+    game.print('Ding! You gain a level of experience.', 'tip');
   }
 });
 
@@ -89,7 +98,7 @@ function getAbilityHtml(hero, index) {
 }
 
 function getPoolHtml(key, a, b, c) {
-  return `<span class="pool ${key}-pool">${rote.Display.getPoolSquares(a, b, c)}</span>`
+  return `<span class="pool ${key}-pool">${rote.Display.getPoolSquares(a, b, c)}</span>`;
 }
 
 function getCurrency(hero) {
@@ -114,7 +123,7 @@ function runGame () {
     width: 40,
     height: 20,
     fontSize: 20,
-    fontFamily: "Fix15MonoBold" // alternatives: "AppleII" or "White Rabbit"
+    fontFamily: "Fix15MonoBold"
   });
   g.display.drawInterface = function(game, hero) {
     console.log('hero', hero);
@@ -124,19 +133,15 @@ function runGame () {
     const used = hero.getAbilityReadiedAmounts();
     intElt.innerHTML = (`
 			<ul class="stats">
-			<li><span>${hero.name}</span></li>
-			<li><span title="${level.description}">Floor: ${game.activeLevelIndex + 1} / ${game.levels.length}</span>
-				<!-- <span class="score">Score: ${hero.score}</span> -->
-			</li>
-			<li><span>Currency: ${getCurrency(hero)}</span></li>
-			<li>Weapon Damage: ${hero.getWeaponDamage()}</li>
-			<li>Defense Rating: ${hero.getArmorDefense()}</li>
-			<li class="hp"><span title="hit points">HP:</span> ${getPoolHtml('hp', hero.hp, hero.hpMax, used.hp)}</li>
-			<li class="mp"><span title="mana points">MP:</span> ${getPoolHtml('mp', hero.mp, hero.mpMax, used.mp)}</li>
-			<!-- <li class="ap"><span title="attack points">AP:</span> ${getPoolHtml('ap', hero.ap, hero.apMax, used.ap)}</li> -->
-			<!-- <li class="bp"><span title="balance points">BP:</span> ${getPoolHtml('bp', hero.bp, hero.bpMax, used.bp)}</li> -->
-			<!-- <li class="ep"><span title="endurance points">EP:</span> ${getPoolHtml('ep', hero.ep, hero.epMax, used.ep)}</li> -->
-			</ul>
+        <li><span>${hero.name}</span></li>
+        <li><span title="${level.description}">Floor: ${game.activeLevelIndex + 1} / ${game.levels.length}</span>
+        </li>
+        <li><span>Currency: ${getCurrency(hero)}</span></li>
+        <li>Weapon Damage: ${hero.getWeaponDamage()}</li>
+        <li>Defense Rating: ${hero.getArmorDefense()}</li>
+        <li class="hp"><span title="hit points">HP:</span> ${getPoolHtml('hp', hero.hp, hero.hpMax, used.hp)}</li>
+        <li class="mp"><span title="mana points">MP:</span> ${getPoolHtml('mp', hero.mp, hero.mpMax, used.mp)}</li>
+		  </ul>
 			${deadHtml}
 			<ul class="abilities">
 			${getAbilityHtml(hero, 0)}
@@ -167,7 +172,7 @@ function runGame () {
   setupMachinery(bottomLevel);
   const topLevel = g.levels[0];
   // Create pcs, npcs, items
-  // rote.random.setSeed();
+  rote.random.setSeed();
   createPlayerCharacter(topLevel);
 
   // "highlight" some parts of the town

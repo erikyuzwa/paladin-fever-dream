@@ -31,7 +31,7 @@ function createWindow() {
   mainWindow.setMenu(null);
 
   // TODO replace with our app landing page
-  mainWindow.setTitle('Temple of Anguish 2 :: wazooinc.itch.io :: ' + pkg.version);
+  mainWindow.setTitle('Paladin Fever Dream :: wazooinc.itch.io :: ' + pkg.version);
 
   // and load the index.html of the app.
   mainWindow.loadURL(`file://${__dirname}/index.html`);
